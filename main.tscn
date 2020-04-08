@@ -1,0 +1,226 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://world/world.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/tinyfont.fnt" type="BitmapFont" id=2]
+[ext_resource path="res://assets/start.png" type="Texture" id=3]
+[ext_resource path="res://main.gd" type="Script" id=4]
+[ext_resource path="res://music/music.ogg" type="AudioStream" id=5]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0, 0, 0, 0.545098 )
+
+[node name="main" type="Node2D"]
+pause_mode = 2
+script = ExtResource( 4 )
+
+[node name="world_container" type="Node2D" parent="."]
+pause_mode = 1
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="world" parent="world_container" instance=ExtResource( 1 )]
+
+[node name="top_scores" type="CanvasLayer" parent="."]
+layer = 3
+
+[node name="top_scores" type="Node2D" parent="top_scores"]
+visible = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Polygon2D" type="Polygon2D" parent="top_scores/top_scores"]
+modulate = Color( 1, 1, 1, 0.545098 )
+color = Color( 0, 0, 0, 1 )
+polygon = PoolVector2Array( 112, 72, 208, 72, 208, 136, 112, 136 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Node2D" type="Node2D" parent="top_scores/top_scores"]
+position = Vector2( 78, 76 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Top" type="Label" parent="top_scores/top_scores/Node2D"]
+margin_right = 84.0
+margin_bottom = 8.0
+rect_scale = Vector2( 2, 2 )
+custom_fonts/font = ExtResource( 2 )
+text = "Top Scores"
+align = 1
+uppercase = true
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="player_1" type="Label" parent="top_scores/top_scores"]
+margin_left = 119.0
+margin_top = 91.0
+margin_right = 203.0
+margin_bottom = 99.0
+custom_fonts/font = ExtResource( 2 )
+text = "Shimizu..........6000"
+uppercase = true
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="player_2" type="Label" parent="top_scores/top_scores"]
+margin_left = 119.0
+margin_top = 98.0
+margin_right = 203.0
+margin_bottom = 106.0
+custom_fonts/font = ExtResource( 2 )
+text = "Yui..............5000"
+uppercase = true
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="player_3" type="Label" parent="top_scores/top_scores"]
+margin_left = 119.0
+margin_top = 105.0
+margin_right = 203.0
+margin_bottom = 113.0
+custom_fonts/font = ExtResource( 2 )
+text = "Kimura...........4000"
+uppercase = true
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="player_4" type="Label" parent="top_scores/top_scores"]
+margin_left = 119.0
+margin_top = 112.0
+margin_right = 203.0
+margin_bottom = 120.0
+custom_fonts/font = ExtResource( 2 )
+text = "Hideaki..........3000"
+uppercase = true
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="player_5" type="Label" parent="top_scores/top_scores"]
+margin_left = 119.0
+margin_top = 119.0
+margin_right = 203.0
+margin_bottom = 127.0
+custom_fonts/font = ExtResource( 2 )
+text = "Akanuma..........2000"
+uppercase = true
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="player_6" type="Label" parent="top_scores/top_scores"]
+margin_left = 119.0
+margin_top = 126.0
+margin_right = 203.0
+margin_bottom = 134.0
+custom_fonts/font = ExtResource( 2 )
+text = "satoh............1000"
+uppercase = true
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="start_btn" type="TextureButton" parent="top_scores/top_scores"]
+margin_left = 143.0
+margin_top = 146.0
+margin_right = 175.0
+margin_bottom = 162.0
+texture_normal = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="start_btn2" type="TextureRect" parent="top_scores/top_scores/start_btn"]
+modulate = Color( 0, 0, 0, 1 )
+show_behind_parent = true
+margin_left = 1.0
+margin_top = 1.0
+margin_right = 33.0
+margin_bottom = 17.0
+texture = ExtResource( 3 )
+
+[node name="new_top_score" type="CanvasLayer" parent="."]
+layer = 3
+
+[node name="new_top_score" type="Node2D" parent="new_top_score"]
+visible = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Polygon2D2" type="Polygon2D" parent="new_top_score/new_top_score"]
+modulate = Color( 1, 1, 1, 0.545098 )
+color = Color( 0, 0, 0, 1 )
+polygon = PoolVector2Array( 88, 72, 232, 72, 232, 112, 88, 112 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="title" type="Node2D" parent="new_top_score/new_top_score"]
+position = Vector2( 78, 76 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Top" type="Label" parent="new_top_score/new_top_score/title"]
+margin_right = 84.0
+margin_bottom = 8.0
+rect_scale = Vector2( 2, 2 )
+custom_fonts/font = ExtResource( 2 )
+text = "NEW TOP SCORE!"
+align = 1
+uppercase = true
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="question" type="Label" parent="new_top_score/new_top_score"]
+margin_left = 96.0
+margin_top = 98.0
+margin_right = 168.0
+margin_bottom = 106.0
+custom_fonts/font = ExtResource( 2 )
+text = "What is your nick?"
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="nameedit" type="LineEdit" parent="new_top_score/new_top_score"]
+margin_left = 174.0
+margin_top = 94.0
+margin_right = 222.0
+margin_bottom = 105.0
+custom_styles/normal = SubResource( 1 )
+custom_fonts/font = ExtResource( 2 )
+max_length = 10
+context_menu_enabled = false
+shortcut_keys_enabled = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+autoplay = true
+bus = "music"
+[connection signal="pressed" from="top_scores/top_scores/start_btn" to="." method="_on_start_btn_pressed"]
+[connection signal="text_changed" from="new_top_score/new_top_score/nameedit" to="." method="_on_nameedit_text_changed"]
+[connection signal="text_entered" from="new_top_score/new_top_score/nameedit" to="." method="_on_nameedit_text_entered"]

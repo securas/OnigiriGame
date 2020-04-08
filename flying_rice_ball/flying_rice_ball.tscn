@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/onigiri.png" type="Texture" id=1]
+[ext_resource path="res://flying_rice_ball/flying_rice_ball.gd" type="Script" id=2]
+
+[sub_resource type="ParticlesMaterial" id=1]
+lifetime_randomness = 0.5
+flag_disable_z = true
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 70.0
+initial_velocity_random = 0.5
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+
+[node name="flying_rice_ball" type="Node2D"]
+position = Vector2( 133, 116 )
+script = ExtResource( 2 )
+
+[node name="tw" type="Tween" parent="."]
+
+[node name="particles" type="Particles2D" parent="."]
+emitting = false
+amount = 80
+one_shot = true
+speed_scale = 2.0
+explosiveness = 1.0
+process_material = SubResource( 1 )
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+offset = Vector2( -1, -6 )
+vframes = 8
+hframes = 8
+frame = 49
+__meta__ = {
+"_editor_description_": ""
+}
+[connection signal="tween_all_completed" from="tw" to="." method="_on_tw_tween_all_completed" flags=7]
+[connection signal="tween_completed" from="tw" to="." method="_on_tw_tween_completed" flags=7]
